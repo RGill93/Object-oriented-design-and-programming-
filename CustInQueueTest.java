@@ -2,7 +2,6 @@ package itemTest;
 
 import static org.junit.Assert.*;
 
-
 import org.junit.Test;
 
 import itemSrc.*;
@@ -66,21 +65,21 @@ public class CustInQueueTest {
 	public void testSetqNum() {
 		CustInQueue cinqueue = new CustInQueue("Andrew", "px34");
 		cinqueue.setqNum(1);
-		assertTrue(cinqueue.getqNum()==1);
+		assertTrue(cinqueue.getqNum() == 1);
 		
 	}
 
 	@Test
 	public void testIsInQueue() {
 		CustInQueue cinqueue = new CustInQueue("Andrew", "px34");
-		assertFalse(cinqueue.isInQueue()!=false);
+		assertFalse(cinqueue.isInQueue() != false);
 	}
 
 	@Test
 	public void testSetInQueue() {
 		CustInQueue cinqueue = new CustInQueue("Andrew", "px34");
 		cinqueue.setInQueue(true);
-		assertFalse(cinqueue.isInQueue()==false);
+		assertFalse(cinqueue.isInQueue() == false);
 	}
 
 }

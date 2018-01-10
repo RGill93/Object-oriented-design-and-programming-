@@ -110,6 +110,14 @@ public class Jacket implements Comparable <Jacket>
 		return brand.compareTo(otherDetails.getBrand());
 		
 	}
+	
+	@Override
+	public String toString()
+	{		
+		return "Jacket [id=" + this.id + ", color=" + this.colour + ", price=" + this.price + ", brand=" + this.brand + 
+				", collected:" + this.collected + ", size=" + this.size + "].";
+	}
+
 
 	
 	

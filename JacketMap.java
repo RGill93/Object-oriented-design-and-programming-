@@ -29,14 +29,14 @@ public class JacketMap
 	{
 		if(allJackets.isEmpty())
 		{
-			return true;
+			return false;
 		} 
 		else
 		{
-			return false;
+			return true;
 		}
 	} 	 
-	public int getNumberOfEntries(boolean collected)	//a method to check where the jackets have been collected
+	public int getNumberOfEntries()	//a method to check where the jackets have been collected
 	{
 		return allJackets.size();
 	}	 
@@ -61,22 +61,29 @@ public class JacketMap
 		
 		for(Jacket aJacket : allJackets.values())
 		{
-			stringBuffer.append(aJacket);
+			stringBuffer.append(aJacket.toString());
 		}
 		
 			return stringBuffer.toString();
 	}
-	public void setCollected(Jacket J)
+	public void setCollected(Jacket j)
 	{
-		
+		j.setCollected(true);
 	}
 	public String listUncollected()
 	{
-		return null;
+		StringBuffer sb = new StringBuffer();
+		for(Jacket aJacket : allJackets.values())
+		{
+			if(aJacket.isCollected() == true)
+			sb.append(aJacket.getId());
+		}
+		
+		return sb.toString();
 	}
 	public Jacket findJacket(String id)
 	{
-		return null;
+		return allJackets.get(id);
 	}
 	
 	

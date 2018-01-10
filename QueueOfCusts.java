@@ -45,13 +45,15 @@ public class QueueOfCusts
     public CustInQueue getNext()
     {    	
     	CustInQueue cq = null;
-    	while(getNumQueueing() == 0)
+    	if(getNumQueueing() > 0)
     	{
     		cq = queue.getFirst();
-    		queue.removeFirst();
-    	}
+    		queue.remove(0);
+    		
+    		return cq;
+    	}   
     	
-    	   return cq; 
+    	  return cq;
     }  
     public String getQueueString() 
     {    	
