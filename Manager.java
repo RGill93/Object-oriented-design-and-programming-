@@ -42,23 +42,14 @@ public class Manager
     
     public void setQCusts(QueueOfCusts c)
     {
-    	QCusts = c;
+    	custQ = c;
     }
     
     public QueueOfCusts getCusts()
     {
-    	return QCusts;
-    }
-    
-    public void setWorkers(worker[] w)
-    {
-    	workers = w;
-    }
-    
-    public worker[] getWorkers()
-    {
-    	return workers;
-    }    
+    	return custQ;
+    } 
+       
 
 /**
  * this method is responsbile for reading relevant files such as
@@ -135,7 +126,7 @@ public class Manager
     	}
     }
     
-    public file getCustsFile()
+    public File getCustsFile()
     {
     	File f = new File("Custs.csv");
     	
@@ -199,7 +190,8 @@ public class Manager
     	{
     		Scanner scanner = new Scanner (new File("Parcels.csv"));
     		System.out.println("Scanning");
-        	while(scanner.hasNext()){  
+        	while(scanner.hasNext())
+        	{  
             	String inputLine = scanner.nextLine();
             	System.out.println(inputLine);
         		processParcelLine(inputLine);
@@ -210,6 +202,7 @@ public class Manager
     	{
     		System.out.println("Exception occurred during runtime");
     	}
+    }
     	
     	public File getParcelFile()
     	{
@@ -223,7 +216,7 @@ public class Manager
         	{
         		return null;
         	}
-    	}
+    	
     }
     
     
@@ -243,29 +236,25 @@ public class Manager
     	{
     		
 			String parts [] = inputLine.split(",");
-			String id = parts[0].trim();			
+			String id = parts[0].trim();
 			
-			String dayString = parts[1].trim();
-			int days = Integer.parseInt(dayString);	
-
-		   
-			String lenString = parts[2].trim();
-			int l = Integer.parseInt(lenString);
+			String colorString = parts[6].trim();
 			
-			String widString = parts[3].trim();
-			int w = Integer.parseInt(widString);
+			String priceDoubleString = parts[7].trim();
+			double priceDouble = Double.parseDouble(priceDoubleString);
 			
-			String heightString = parts[4].trim();
-			int h = Integer.parseInt(heightString);
+			String brandString = parts[8].trim();
 			
-			String weightString = parts[5].trim();
-			int weight = Integer.parseInt(weightString);
+			String collectedBoolString = parts[9].trim();
+			boolean collectedBool = Boolean.parseBoolean(collectedBoolString);
 			
-			
-			
+			String sizeDoubleString = parts[10].trim();
+			double sizeDouble = Double.parseDouble(sizeDoubleString);
+				
+						
 			// creates and object of the jacket and adds to the list and then adds it to the list
-			Jacket j = new Jacket(id, color, price, brand, collected, size)
-            allJackets.addDetails(j);
+			Jacket j = new Jacket(id, colorString, priceDouble, brandString, collectedBool, sizeDouble);
+            allJackets.addDetails(j.getId(), j);
             
 		}
 			
@@ -305,9 +294,7 @@ public void run()
         		e.printStackTrace();
         	}
         	System.exit(0);
-	}
-
-  
+	} 
     
     
     /**

@@ -17,7 +17,7 @@ public class jacketTest
 	public void testgetSize()
 	{
 		j = new Jacket("lt64s","Black",25.0, "Addidas",true, 30.0);
-		assertTrue(j.getSize() == 25.0);
+		assertTrue(j.getSize() == 30.0);
 	}
 	
 	@Test
@@ -31,7 +31,7 @@ public class jacketTest
 	public void testPrice()
 	{
 		j = new Jacket("lt64s","Black",25.0, "Addidas",true, 30.0);
-		assertTrue(j.getPrice() == 30.00);
+		assertTrue(j.getPrice() == 25.00);
 	}
 	
 	@Test

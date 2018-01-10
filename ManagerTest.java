@@ -1,10 +1,7 @@
 package itemTest;
-
+import itemSrc.*;
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-import core.ParcelMap;
-import core.QueueOfCusts;
 
 public class ManagerTest 
 {
@@ -19,6 +16,7 @@ public class ManagerTest
 	@Test
 	public void testManager() 
 	{
+		
 		Manager m = new Manager();
 		QueueOfCusts Qcusts = new QueueOfCusts();
 		JacketMap allJackets = new JacketMap();
