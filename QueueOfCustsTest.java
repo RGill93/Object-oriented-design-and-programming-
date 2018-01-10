@@ -113,8 +113,11 @@ public class QueueOfCustsTest {
 		CustInQueue cinqueue = new CustInQueue("Andrew", "px34");
 		qOfCusts.addDetails(cinqueue);
 		qOfCusts.addToQueue();		
-		System.out.println(qOfCusts.getQueueString());
-		assertEquals("CustInQueue [name=Andrew, pId=px34, qNum=0queueing :  true)" + '\n', qOfCusts.getQueueString());		
+		assertSame(qOfCusts.getQueueString(),cinqueue);
+		CustInQueue cinqueue2 = new CustInQueue("Jenny", "px335");
+		qOfCusts.addDetails(cinqueue2);
+		qOfCusts.addToQueue();
+		assertEquals(qOfCusts.getQueueString(),cinqueue2);		
 	}
 /*
  * This method is implemented for you.
@@ -127,7 +130,12 @@ public class QueueOfCustsTest {
 		CustInQueue cinqueue = new CustInQueue("Andrew", "px34");
 		qOfCusts.addDetails(cinqueue);
 		qOfCusts.addToQueue();
-		assertTrue(qOfCusts.getNumQueueing() == 1);				
+		assertTrue(qOfCusts.addToQueue(),cinqueue);
+		qOfCusts = new QueueOfCusts();
+		CustInQueue cinqueue2 = new CustInQueue("Andrew", "px34");
+		qOfCusts.addDetails(cinqueue);
+		qOfCusts.addToQueue();
+		assertTrue(qOfCusts.addToQueue(),cinqueue2);		
 		
 	}
 

@@ -28,23 +28,17 @@ public class WorkerTest
 		qOfCusts.addDetails(cin2);
 		qOfCusts.addToQueue();
 		
-		JacketMap jacketList = new JacketMap();	
-		
+		JacketMap jacketList = new JacketMap();
 		Jacket j = new Jacket("jx21","Black",25.0, "Addidas",true, 30.0);		
 		Jacket j2 = new Jacket("lt64s","Blue",45.0, "Nike",false, 50.0);
-		
 		jacketList.addDetails(j.getId(), j);
 		jacketList.addDetails(j.getId(), j2);
-	
+		wareHouseWorker = new Worker( qOfCusts, jacketList, 5, 4);
 		
-		wareHouseWorker = new Worker( qOfCusts, jacketList, 5, 4);		
-		assertTrue(wareHouseWorker.getNum() == 4);
+		assertTrue(wareHouseWorker.getNum()==4);
+		assertEquals(wareHouseWorker.getNext().getName(), "Andrew");
 		wareHouseWorker.setClosed();
-		
-		wareHouseWorker = new Worker( qOfCusts, jacketList, 5, 4);	
-		assertFalse(wareHouseWorker.getNum() == 5);
-		wareHouseWorker.setClosed();
-		
+		assertEquals(wareHouseWorker.getNext().getName(), "Janice");
 	}
 /*
  * This tests whether the current customer can be obtained
@@ -91,7 +85,6 @@ public class WorkerTest
 		
 		qOfCusts.addDetails(cin);
 		qOfCusts.addToQueue();
-		
 		qOfCusts.addDetails(cin2);
 		qOfCusts.addToQueue();
 		
@@ -105,7 +98,7 @@ public class WorkerTest
  */
 	@Test
 	public void testGetClosed() 
-	{			
+	{
 		QueueOfCusts qOfCusts = new QueueOfCusts();
 		
 		CustInQueue cin = new CustInQueue("Andrew", "jx21");
@@ -114,7 +107,20 @@ public class WorkerTest
 		qOfCusts.addDetails(cin);
 		qOfCusts.addToQueue();
 		qOfCusts.addDetails(cin2);
-		qOfCusts.addToQueue();						
+		qOfCusts.addToQueue();
+		
+		JacketMap jacketList = new JacketMap();
+		Jacket j = new Jacket("jx21","Black",25.0, "Addidas",true, 30.0);
+		
+		Jacket j2 = new Jacket("lt64s","Blue",45.0, "Nike",false, 50.0);
+		jacketList.addDetails(j.getId(), j);
+		jacketList.addDetails(j.getId(), j2);
+		
+		wareHouseWorker = new Worker( qOfCusts, jacketList, 5, 4);
+		assertEquals(qOfCusts.getNext(),cin);
+		wareHouseWorker.setClosed();
+		assertFalse(wareHouseWorker.getCurrentCust()==cin);
+		assertFalse(wareHouseWorker.getCurrentCust()==cin2);
 	}
 /**
  * this has been tested alongside the getClosed method
