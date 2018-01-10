@@ -1,7 +1,5 @@
 package itemSrc;
 
-import java.util.Iterator;
-
 /**
  *  a Worker is responsible for processing orders in the warehouse
  * @author John Kanyaru
@@ -38,19 +36,15 @@ public class Worker   {
 	}   	
     public CustInQueue getCurrentCust() 
     {
-    	return allCusts.get(0);
+    	return currentCust;
     }    
-    
-    // return the number of the current workers
     public int getNum() 
     {
     	 return numWorker;
     }	
-    
-    // return true or false depending  on whether the parcel processed or not
 	public boolean getClosed() 
 	{
-		if(!open)
+		if(open == true)
 		{
 			return true;
 		}
@@ -61,25 +55,8 @@ public class Worker   {
 	}	
 	public void setClosed() 
 	{
-		/*
-		for(Iterator<CustInQueue> iter = this.iterator(); iter.hasNext();)
-		{
-			CustInQueue data = iter.next();
-		}
-		*/
-		
-		this.open = false;
+		open = false;		
 	}
-	
-	public void setFinished()
-	{
-		this.finished = true;
-	}
-	
-	public boolean getFinished() 
-	{ 
-		return finished; 	
-	} 
 	public int getSpeed() 
 	{
 		return speed;
@@ -88,7 +65,10 @@ public class Worker   {
 	{
 		this.speed = speed;
 	}	
-	
+	public boolean getFinished() 
+	{ 
+		return finished; 	
+	} 
 	public  CustInQueue getNext() 
 	{		
 		CustInQueue c = allCusts.getNext();
