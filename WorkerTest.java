@@ -12,7 +12,7 @@ public class WorkerTest
 	Worker wareHouseWorker;
 /**
  * This tests the Worker constructor
- * 
+ * You are to implement this constructor
  */
 
 	@Test
@@ -42,7 +42,7 @@ public class WorkerTest
 	}
 /*
  * This tests whether the current customer can be obtained
- * 
+ * You are to implement this method
  */
 	@Test
 	public void testGetCurrentCust()
@@ -72,7 +72,7 @@ public class WorkerTest
 
 /**
  * This has already been tested with the constructor
- * 
+ * Implementation is provided
  */
 	@Test
 	public void testGetNum()
@@ -94,7 +94,7 @@ public class WorkerTest
 	}
 /**
  * This tests whether a worker has closed processing a customer's job
- * 
+ * provide an implementation of this method
  */
 	@Test
 	public void testGetClosed() 
@@ -124,7 +124,7 @@ public class WorkerTest
 	}
 /**
  * this has been tested alongside the getClosed method
- * 
+ * provide an implementation for this method
  */
 	@Test
 	public void testSetClosed() 
@@ -142,8 +142,8 @@ public class WorkerTest
 	}
 
 /**
- * working implementation of this method
- * 
+ * You're provided with a working implementation of this method
+ * Write the tests for it
  * 
  */
 	@Test

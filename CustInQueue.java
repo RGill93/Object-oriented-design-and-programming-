@@ -2,7 +2,8 @@ package itemSrc;
 
 /**
  * This class maintains a queue of parcels for customers
- *  *
+ * @author John Kanyaru
+ *
  */
 public class CustInQueue 
 {

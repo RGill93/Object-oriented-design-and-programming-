@@ -4,7 +4,7 @@ package itemSrc;
  * This is a buffer for storing logs in memory
  * This class is provided with full implementation.
  * Use it as you choose.
- * 
+ * @author John Kanyaru
  *
  */
 

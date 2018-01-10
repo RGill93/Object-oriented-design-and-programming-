@@ -1,6 +1,7 @@
 package itemTest;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 import core.ParcelMap;
 import core.QueueOfCusts;
@@ -14,34 +15,49 @@ public class ManagerTest
  * This is likely to be possible after implementing 
  * the other classes
  */
+	
 	@Test
 	public void testManager() 
 	{
-		fail("Not yet implemented");
+		Manager m = new Manager();
+		QueueOfCusts Qcusts = new QueueOfCusts();
+		JacketMap allJackets = new JacketMap();
+		assertTrue(Qcusts.getNumQueueing() == 0);
+		assertTrue(allJackets.getNumberOfEntries() == 0);
 	}
 
+	
+	// check if the queue that was created has 6 items
 	@Test
 	public void testInitialiseData() 
 	{
-		fail("Not yet implemented");
+		Manager m = new Manager();
+		m.initialiseData();
+		assertTrue(m.getCusts().getNumQueueing() == 6);
 	}
 
 	@Test
 	public void testInitialiseWorkers()
 	{
-		fail("Not yet implemented");
+		Manager m = new Manager();
+		m.initialiseData();
+		assertTrue(m.getCusts().getNumberOfEntries() == 30);
 	}
 
+	// checks if there is a customer file to read
 	@Test
 	public void testReadCustFile() 
 	{
-		fail("Not yet implemented");
+		Manager m = new Manager();
+		assertNotNull(m.getCustFile());
 	}
 
+	// checks if there is a parcel file to read
 	@Test
 	public void testReadParcelFile() 
 	{
-		fail("Not yet implemented");
+		Manager m = new Manager();
+		assertNotNull(m.getParcelFile());
 	}
 
 }

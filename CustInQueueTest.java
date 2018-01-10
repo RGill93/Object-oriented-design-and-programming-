@@ -8,7 +8,7 @@ import org.junit.Test;
 import itemSrc.*;
 /**
  *  a JUnit test class for the CustInQueue class
- * 
+ * @author John Kanyaru
  *
  */
 public class CustInQueueTest {

@@ -23,12 +23,11 @@ public class Jacket implements Comparable <Jacket>
 	public Jacket(String id, String colour, double price, String brand, boolean collected, double size)
 	{
 		this.id = id;
-		this.size = size;
 		this.colour = colour;
 		this.price = price;
 		this.brand = brand;
 		this.collected = collected;
-		
+		this.size = size;		
 	}
 	
 	public double getSize() 

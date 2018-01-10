@@ -2,7 +2,7 @@ package itemSrc;
 
 /**
  *  a Worker is responsible for processing orders in the warehouse
- * 
+ * @author John Kanyaru
  *
  */
 

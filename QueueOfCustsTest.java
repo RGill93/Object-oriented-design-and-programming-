@@ -21,7 +21,7 @@ public class QueueOfCustsTest {
 	}
 /*
  * a test to show that you can add customers to the queue
- * 
+ * You are to implement this method
  */
 	@Test
 	public void testAddDetails() 
@@ -34,7 +34,7 @@ public class QueueOfCustsTest {
 	}
 /*
  * a test to show that the count of customers changes when a customer is added to the queue
- * 
+ * You are to implement this method
  */
 	@Test
 	public void testGetNumberOfEntries() 
@@ -49,7 +49,7 @@ public class QueueOfCustsTest {
 	}
 /*
  * a test method to check how many customers have been added to the queue
- * 
+ * You are to implement this method
  */
 	@Test
 	public void testGetNumQueueing() 
@@ -67,7 +67,7 @@ public class QueueOfCustsTest {
 	}
 /*
  * a method to test that a customer in a specific location in the collection can be obtained
- * 
+ * You are to implement this method
  */
 	@Test
 	public void testGet() 
@@ -85,7 +85,7 @@ public class QueueOfCustsTest {
 	}
 /*
  * a method to test that you can find the next customer in the queue.
- * 
+ * You are to implement this method
  * 
  */
 	@Test
@@ -103,8 +103,8 @@ public class QueueOfCustsTest {
 	}
 
 	/*
-	 * This method is implemented. 
-	 * 
+	 * This method is implemented for you. 
+	 * Write tests to show that it works as expected
 	 */
 	@Test
 	public void testGetQueueString() 
@@ -120,8 +120,8 @@ public class QueueOfCustsTest {
 		assertEquals(qOfCusts.getQueueString(),cinqueue2);		
 	}
 /*
- * This method is implemented.
- * 
+ * This method is implemented for you.
+ * Write tests to show that it works as expected
  */
 	@Test
 	public void testAddToQueue() 

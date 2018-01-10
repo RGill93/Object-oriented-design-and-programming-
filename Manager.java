@@ -9,7 +9,7 @@ import java.io.*;
 /**
  * This class puts everything together, it is the applications entry point
  * You can have your main method here if you wish.
- * 
+ * @author John Kanyaru
  *
  */
 public class Manager
@@ -40,6 +40,25 @@ public class Manager
     	allJackets = new JacketMap();
     }
     
+    public void setQCusts(QueueOfCusts c)
+    {
+    	QCusts = c;
+    }
+    
+    public QueueOfCusts getCusts()
+    {
+    	return QCusts;
+    }
+    
+    public void setWorkers(worker[] w)
+    {
+    	workers = w;
+    }
+    
+    public worker[] getWorkers()
+    {
+    	return workers;
+    }    
 
 /**
  * this method is responsbile for reading relevant files such as
@@ -112,7 +131,21 @@ public class Manager
     	}
     	catch (Exception e) 
     	{
-    		
+    		System.out.println("Exception occured during runtime");    		
+    	}
+    }
+    
+    public file getCustsFile()
+    {
+    	File f = new File("Custs.csv");
+    	
+    	if(f.exists())
+    	{
+    		return f;
+    	}
+    	else
+    	{
+    		return null;
     	}
     }
     /**
@@ -175,9 +208,25 @@ public class Manager
     	}
     	catch (Exception e)
     	{
-    		
+    		System.out.println("Exception occurred during runtime");
+    	}
+    	
+    	public File getParcelFile()
+    	{
+    		File f = new File("Parcel.csv");
+        	
+        	if(f.exists())
+        	{
+        		return f;
+        	}
+        	else
+        	{
+        		return null;
+        	}
     	}
     }
+    
+    
     /**
      * similar to processcutline
      * simply, breakdown file content into appropriate data 
@@ -213,8 +262,10 @@ public class Manager
 			int weight = Integer.parseInt(weightString);
 			
 			
-			   		
-            allJackets.addDetails(j.getId(), j);
+			
+			// creates and object of the jacket and adds to the list and then adds it to the list
+			Jacket j = new Jacket(id, color, price, brand, collected, size)
+            allJackets.addDetails(j);
             
 		}
 			
